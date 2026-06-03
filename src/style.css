@@ -131,3 +131,57 @@ main{
     color: #d0d0d0;
     padding: 15px;
 }
+
+.greet{
+    margin-bottom: 15px;
+}
+
+/* field-sizing  make height automatic adjust base on the input
+textarea {
+  field-sizing: content; 
+
+  width: 100%;
+  resize: none;
+  background-color: transparent;
+  color: #d0d0d0;
+
+  outline: none;
+  border: none;
+} */
+
+#hinput{
+    position: absolute; 
+    left: -999px;
+}
+
+.terminal{
+    line-height: 1;
+    width: 100%;
+    /* background-color: rgb(0, 185, 185); */
+}
+#text{
+    word-break: break-all;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+#text::before{
+    content: "> ";
+}
+
+#cursor{
+    display: inline-block;
+    height: 1em;
+    width: 8px;
+    background-color: rgb(137, 137, 137);
+    vertical-align: text-bottom;
+    
+}
+
+.blink{
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50%{opacity: 0;}
+}
