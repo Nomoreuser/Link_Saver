@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Monaco, monospace;
+}
+
+body{
+    background-color: #080808;
+    border-width: 10px;
+    overflow: hidden;
+    border: 2px solid rgb(66, 65, 65);
+}
+
+#top{
+    padding: 0 10px;
+    height: 30px;
+    font-size: 16px;
+    color: rgb(245, 245, 245);
+    border-bottom: 2px solid rgb(66, 65, 65);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    -webkit-app-region: drag;
+}
+
+#top .title{
+    height: 100%;
+    width: 120px;
+    /* background-color: rgb(109, 71, 0); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title span{
+    overflow: hidden;
+    height: 16px;
+    width: 20px;
+    border: 1px solid white;
+    position: relative;
+    animation: ll .6s ease-in forwards;
+}
+
+@keyframes ll {
+    from{height: 2px;}
+    to{height: 16px;}
+}
+
+.title span::before{
+    content: "";
+    display: block;
+
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    background-color: rgb(245, 245, 245);
+    height: 2px;
+    width: 12px;
+
+    /* animation-delay: 1s; */
+    animation: slide .8s ease-in forwards;
+}
+
+.title span::after{
+    content: '';
+    height: 2px;
+    width: 8px;
+    display: block;
+
+    position: absolute;
+    top: 8px;
+    left: 0px;
+    background-color: rgb(245, 245, 245);
+
+    /* animation-delay: 1.3s; */
+    animation: slide 1s ease-in forwards;
+}
+
+@keyframes slide {
+    from{left: -12px;}
+    to{left: 0px;}
+}
+
+
+.circles{
+    height: fit-content;
+    width: 75px;
+    margin-right: 5px;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.circles span{
+    width: 16px;
+    height: 16px;
+    border-radius: 20rem;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.circles span:nth-child(1){
+    background-color: rgb(255, 71, 71);
+}
+
+.circles span:nth-child(2){
+    background-color: rgb(255, 255, 69);
+    animation-delay: .3s;
+}
+
+.circles span:nth-child(3){
+    background-color: rgb(63, 255, 63);
+    animation-delay: .5s;
+}
+
+@keyframes pulse {
+    0%{transform: scale(.85);}
+    50%{transform:scale(1)}
+    100%{transform: scale(.85);}
+}
+
+
+main{
+    color: #d0d0d0;
+    padding: 15px;
+}
