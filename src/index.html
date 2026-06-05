@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
     <div id="top">
         <div class="title">
             <span></span>
@@ -16,7 +17,8 @@
         <div class="circles"><span></span><span></span><span></span></div>
     </div>
 
-    <main>
+    <div id="ttt" style="position: fixed; background-color: blue; padding: 5px; color: aliceblue;"></div>
+    <main id="main">
         <div class="greet">
             <p>
                 Welcome to Link Saver! <br>
@@ -24,10 +26,15 @@
             </p>
         </div>
 
-        <div class="terminal">
-            <span id="text"></span><span id="cursor"></span>
+        <div id="terminal">
+            <div id="res"></div>
+            <div id="inputHolder">
+                <span id="text"></span>
+                <!-- <span id="cursor"></span> -->
+            </div>
+            
         </div>
-        <input id="hinput" autofocus type="text">
+        <input id="hinput" autofocus type="search" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
 
     </main>
 
