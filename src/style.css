@@ -8,6 +8,7 @@ html,body{
     height: 100%;
     width: 100%;
     font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Monaco, monospace;
+    
 }
 
 body{
@@ -130,37 +131,47 @@ body{
 main{
     color: #d0d0d0;
     padding: 15px;
-    padding-right: 21px;
+    padding-right: 0px;
     /* background-color: rgb(0, 89, 59); */
     height: calc(100% - 30px);
 
     overflow-y: scroll;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    scrollbar-color: rgb(245, 245, 245) transparent;
+    overflow-x: hidden;
+}
+main::-webkit-scrollbar {
+    width: 5px;
 }
 
-.showScroll{
-    scrollbar-width: thin;
+main::-webkit-scrollbar-track {
+    background: transparent;
 }
+
+main::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+    border: 2px solid black;
+    border-left: none;
+}
+
+main::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+.bigScroll::-webkit-scrollbar{
+    width: 12px;
+}
+
+
+
+
+/* .showScroll{
+    scrollbar-width: thin;
+} */
 
 
 .greet{
     margin-bottom: 15px;
 }
-
-/* field-sizing  make height automatic adjust base on the input
-textarea {
-  field-sizing: content; 
-
-  width: 100%;
-  resize: none;
-  background-color: transparent;
-  color: #d0d0d0;
-
-  outline: none;
-  border: none;
-} */
 
 #hinput{
     position: fixed;
@@ -171,14 +182,16 @@ textarea {
 
 #terminal{
     /* background-color: rgb(0, 185, 185); */
+    width: 615px;
 }
-
 
 
 #text, #res span{
     word-break: break-all;
-    white-space: pre-wrap; /* keep the original input space */
+    white-space: break-spaces; /* wow going to next line for space  */
+    /* overflow-wrap: anywhere;  */
     /* background-color: red; */
+    
 }
 #text::before{
     content: "> ";
@@ -192,10 +205,6 @@ textarea {
     vertical-align: text-bottom;
 
     animation: blink 1s steps(1) infinite;
-}
-
-.blink{
-    
 }
 
 @keyframes blink {
